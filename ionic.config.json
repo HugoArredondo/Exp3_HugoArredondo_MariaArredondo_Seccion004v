@@ -1,0 +1,7 @@
+{
+  "name": "EducTips",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

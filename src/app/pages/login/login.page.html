@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text="Atrás"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="titulo">Inicio de Sesión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="formulario">
+          <form #formulario="ngForm" [formGroup]="formularioLogin">
+            <ion-item>
+              <ion-label  position="floating">Usuario</ion-label>
+              <ion-input  type="text" formControlName="user" 
+                          [(ngModel)]= "login.user">
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label  position="floating">Contraseña</ion-label>
+              <ion-input  type="password" formControlName="pass"
+                          [(ngModel)]= "login.pass">
+                
+              </ion-input>
+            </ion-item>
+          </form>
+          <div class="botones">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="8" offset="2">
+                  <ion-button color="danger" class="boton"
+                      type="submit" expand="full" shape="round" (click)="ingresar()">
+                    Conectar
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="enlace">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="10" offset="1">
+                  <p>¿No tienes una cuenta? <a href="/registro">Regístrate</a></p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- <div class="titulo">
+      <h1>Inicio de Sesión</h1>
+    </div>
+    <div class="formulario">
+      <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    
+        <ion-item>
+          <ion-label>Usuario: </ion-label>
+          <ion-input type="text" placeholder="Usuario"
+                     name="user" [(ngModel)]= "login.user"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required autofocus>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Password: </ion-label>
+          <ion-input type="password" placeholder="Contraseña"
+                     name="pass" [(ngModel)]= "login.pass"
+                     required>
+          </ion-input>
+        </ion-item>
+        
+        <div class="botones">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="8" offset="2">
+                <ion-button color="danger" class="boton"
+                    type="submit" expand="full" shape="round" routerLink="/inicio">
+                  Conectar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div class="enlace">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="8" offset="2">
+                <p>¿No tienes una cuenta? <a href="/registro">Regístrate</a></p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+    
+      </form>
+    </div> -->
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+.bg-image {
+    background-image: url("/assets/fondo12.jpg");
+    width:auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+ion-card {
+    height: 500px;
+}
+
+ion-img {
+    height: 200px;
+}
+
+ion-card-content {
+    height: 40%;
+}

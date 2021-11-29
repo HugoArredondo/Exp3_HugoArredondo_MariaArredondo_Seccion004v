@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text="Atrás"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Suscripción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="titulo">Suscríbete</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="formulario">
+          <form #formulario="ngForm" [formGroup]="formularioSuscribe">
+        
+            <ion-item>
+              <ion-label>Nombre: </ion-label>
+              <ion-input type="text" placeholder="Nombre"
+                         name="nombre" [(ngModel)]= "suscripcion.nombre"
+                         formControlName="nombre" autocapitalize>
+              </ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Rut: </ion-label>
+              <ion-input type="number" placeholder="11222333"
+                         name="rut" [(ngModel)]= "suscripcion.rut"
+                         formControlName="rut" maxlength="8">
+              </ion-input>-
+              <ion-input type="text" placeholder="1"
+                          name="dv" [(ngModel)]= "suscripcion.dv"
+                          formControlName="dv"
+                          maxlength="1">
+              </ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label>Teléfono: </ion-label>
+              <ion-input type="number" placeholder="9 9999 9999"
+                         name="phono" [(ngModel)]= "suscripcion.phono"
+                         formControlName="phono" maxlength="9">
+              </ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label>Correo: </ion-label>
+              <ion-input type="email" placeholder="tucorreo@email.com"
+                         name="email" [(ngModel)]= "suscripcion.email"
+                         pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                         formControlName="email">
+              </ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label>Educación de Interés</ion-label>
+              <ion-select type="text" placeholder="Eliga una opción"
+                          name="interes" [(ngModel)]= "suscripcion.interes"
+                          formControlName="interes">
+                <ion-select-option value="tradicional">Tradicional</ion-select-option>
+                <ion-select-option value="montesori">Montessori</ion-select-option>
+                <ion-select-option value="waldorf">Waldorf</ion-select-option>
+              </ion-select>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label>Comentario</ion-label>
+              <ion-textarea type="text" placeholder="Escriba un comentario"
+                            name="comentario" [(ngModel)]= "suscripcion.comentario"
+                            maxlength="500" formControlName="comentario">
+              </ion-textarea>
+            </ion-item>
+            
+            <div class="botones">
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-button color="secondary" class="boton" (click)="enviar()"
+                        type="submit" expand="full" shape="round">
+                      Enviar
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-button color="warning" class="boton"
+                        type="reset" expand="full" shape="round">
+                      Limpiar
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+        
+          </form>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- <div class="titulo">
+      <h1>Suscríbete</h1>
+    </div>
+    <div class="formulario">
+      <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    
+        <ion-item>
+          <ion-label>Nombre: </ion-label>
+          <ion-input type="text" placeholder="Nombre"
+                     name="nombre" [(ngModel)]= "suscripcion.nombre"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required autofocus>
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Rut: </ion-label>
+          <ion-input type="number" placeholder="11222333"
+                     name="rut" [(ngModel)]= "suscripcion.rut"
+                     required>
+          </ion-input>-
+          <ion-input type="text" placeholder="1"
+                      name="dv" [(ngModel)]= "suscripcion.dv"
+                      required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Teléfono: </ion-label>
+          <ion-input type="number" placeholder="9 9999 9999"
+                     name="phono" [(ngModel)]= "suscripcion.phono"
+                     required>
+          </ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Correo: </ion-label>
+          <ion-input type="email" placeholder="tucorreo@email.com"
+                     name="email" [(ngModel)]= "suscripcion.email"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required>
+          </ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Educación de Interés</ion-label>
+          <ion-select type="text" placeholder="Eliga una opción"
+                      name="interes" [(ngModel)]= "suscripcion.interes"
+                      required>
+            <ion-select-option value="tradicional">Tradicional</ion-select-option>
+            <ion-select-option value="montesori">Montessori</ion-select-option>
+            <ion-select-option value="waldorf">Waldorf</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Comentario</ion-label>
+          <ion-textarea type="text" placeholder="Escriba un comentario"
+                        name="comentario" [(ngModel)]= "suscripcion.interes"
+                        maxlength="500"></ion-textarea>
+        </ion-item>
+        
+        <div class="botones">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button [disabled] ="formulario.invalid" color="secondary" class="boton"
+                    type="submit" expand="full" shape="round" routerLink="/inicio">
+                  Enviar
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button color="warning" class="boton"
+                    type="reset" expand="full" shape="round">
+                  Limpiar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+    
+      </form>
+    </div> -->
+  </div>
+</ion-content>

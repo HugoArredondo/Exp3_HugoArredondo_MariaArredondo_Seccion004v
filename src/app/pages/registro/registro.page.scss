@@ -1,0 +1,35 @@
+.bg-image {
+    background-image: url("/assets/fondo10.jpg");
+    width:auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+ion-card {
+    height: 95%;
+}
+
+.titulo{
+    padding-top: 30px;
+    color: var(--ion-color-success) !important;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+.formulario{
+    padding-top: 40px;
+}
+
+.botones{
+    padding-top: 60px;
+    font-weight: bold;
+}
+
+.boton{
+    font-weight: bold;
+}

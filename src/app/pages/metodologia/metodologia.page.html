@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text="Atrás"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Metodologías Educacionales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-slides  pager="true">
+      <ion-slide *ngFor="let slide of slides">
+        <ion-card>
+          <figure>
+            <ion-img [src]="slide.img"></ion-img>
+          </figure>
+          <ion-card-header>
+            <ion-card-title class= "titulo" [innerHTML]="slide.titulo"></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="texto">
+              <p>{{slide.contenido}}
+                <a href="{{slide.enlace}}" target="_blank">Ver más</a>
+              </p>
+            </div><br>
+          </ion-card-content>      
+        </ion-card>
+        <!-- <div class="slide-img-padding">
+          <img [src]="slide.img">
+        </div>
+        <div>
+          <h3 [innerHTML]="slide.titulo"></h3>
+        </div>
+        <div>
+          <p [innerHTML]="slide.contenido"></p>
+        </div> -->
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

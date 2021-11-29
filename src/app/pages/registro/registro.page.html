@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/login"
+        text="Atrás"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="titulo">Regístrate</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="formulario">
+          <form #formulario="ngForm" [formGroup]="formularioRegistro">
+
+            <ion-item>
+              <ion-label>Nombre: </ion-label>
+              <ion-input  type="text" placeholder="Nombre y Apellido"
+                          formControlName="nombre" [(ngModel)]= "newDato.nombre"
+                          autocapitalize>
+              </ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Rut: </ion-label>
+              <ion-input  type="number" name="rut" maxlength="8"
+                          placeholder="11111111" [(ngModel)]= "newDato.rut"
+                          formControlName="rut">
+              </ion-input>-
+              <ion-input  type="text" [(ngModel)]= "newDato.dv"
+                          placeholder="1" maxlength="1"
+                          formControlName="dv">
+              </ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label>Correo: </ion-label>
+              <ion-input  type="email" name="email" placeholder="correo@mail.com"
+                          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                          formControlName="email" [(ngModel)]= "newDato.email">
+              </ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label>Usuario: </ion-label>
+              <ion-input  type="text" name="user" [(ngModel)]= "newDato.user"
+                          formControlName="user">
+              </ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label>Contraseña: </ion-label>
+              <ion-input  type="password" [(ngModel)]= "newDato.pass"
+                          formControlName="pass">
+              </ion-input>
+            </ion-item>        
+            <div class="botones">
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-button color="secondary" class="boton"
+                        type="submit" expand="full" shape="round" (click)="addDatos()" (click)="guardar()">
+                      Enviar
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-button color="warning" class="boton"
+                        type="reset" expand="full" shape="round">
+                      Limpiar
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </form>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- <div class="titulo">
+      <h1>Regístrate</h1>
+    </div>
+    <div class="formulario">
+      <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    
+        <ion-item>
+          <ion-label>Nombre: </ion-label>
+          <ion-input type="text" placeholder="Nombre"
+                     name="nombre" [(ngModel)]= "registro.nombre"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required autofocus>
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Rut: </ion-label>
+          <ion-input type="number" placeholder="11222333"
+                     name="rut" [(ngModel)]= "registro.rut"
+                     required>
+          </ion-input>-
+          <ion-input type="text" placeholder="1"
+                      name="dv" [(ngModel)]= "registro.dv"
+                      required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Correo: </ion-label>
+          <ion-input type="email" placeholder="tucorreo@email.com"
+                     name="email" [(ngModel)]= "registro.email"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Usuario: </ion-label>
+          <ion-input type="text" placeholder="Usuario"
+                     name="user" [(ngModel)]= "registro.user"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     required autofocus>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Password: </ion-label>
+          <ion-input type="password" placeholder="Contraseña"
+                     name="pass" [(ngModel)]= "registro.pass"
+                     required>
+          </ion-input>
+        </ion-item>
+        
+        <div class="botones">
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button color="secondary" class="boton"
+                    type="submit" expand="full" shape="round" routerLink="/inicio">
+                  Enviar
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button color="warning" class="boton"
+                    type="reset" expand="full" shape="round">
+                  Limpiar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+    
+      </form>
+    </div> -->
+  </div>
+</ion-content>

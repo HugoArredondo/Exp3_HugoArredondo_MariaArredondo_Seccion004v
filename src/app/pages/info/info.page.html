@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text="Atrás"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Menú Cafeterias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-grid fixed>
+      <ion-row>
+        <!-- <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+          *ngFor ="let informacion of info; let i= index">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Regiones</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <ion-label>
+                    <span>{{i + 1 }} - </span>
+                    <span>{{informacion.nombre}}</span>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col> -->
+        <ion-col size="12" size-lg="4" size-md="6" size-sm="6" size-xs="12"
+                *ngFor ="let infor of info; let i= index">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>
+                  <span class="text">Menú N° {{i + 1 }}</span>
+              </ion-card-subtitle>
+              <ion-card-title>{{infor.strCategory}}</ion-card-title>
+            </ion-card-header>    
+            <ion-img  *ngIf="infor.strCategoryThumb"
+                      [src]="infor.strCategoryThumb"></ion-img>   
+            <ion-card-content>
+              <p class="noticia-description">
+                {{infor.strCategoryDescription}}
+              </p>
+            </ion-card-content>          
+          </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

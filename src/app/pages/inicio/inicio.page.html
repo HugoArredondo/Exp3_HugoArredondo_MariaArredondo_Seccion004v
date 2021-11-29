@@ -1,0 +1,51 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<ion-header>
+  <ion-toolbar class="ion-padding" color="success">
+    <ion-buttons slot="start">
+     <ion-button (click)="mostrarMenu()">
+       <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+     </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" >
+     <ion-avatar>
+        <ion-img src="assets/logo1.jpg"></ion-img>
+     </ion-avatar>
+   </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg-image">
+    <ion-card class="carta">
+      <div class="cont-carta">
+        <ion-card-header>
+          <ion-card-title class="titulo">Educación en Chile</ion-card-title>
+        </ion-card-header>
+        <figure>
+          <ion-img class= "img-card" src="/assets/educacion.jpg"></ion-img>
+        </figure>
+        <ion-card-content>
+          <div class="texto">
+            <p> El sistema educativo en Chile se divide en etapas obligatorias,
+              que todo ciudadano menor de edad debe cumplir hasta que éste tenga 18 años.</p>
+          </div><br>
+          <div>
+            <ion-button class="boton" routerLink="/niveles" expand="block" color="secondary">
+              Niveles
+            </ion-button>
+          </div>
+          <div>
+            <ion-button class="boton" routerLink="/metodologia" expand="block" color="warning">
+              Metodologías Educacionales
+            </ion-button>
+          </div>
+         
+         
+        </ion-card-content>      
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

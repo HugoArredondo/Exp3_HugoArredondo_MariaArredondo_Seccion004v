@@ -1,0 +1,46 @@
+.bg-image {
+    background-image: url("/assets/fondo6.jpg");
+    width:auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+ion-slide{
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+ion-slides{
+    --bullet-background: grey;
+    --bullet-background-active: #8890B2;
+}
+
+figure{
+    padding-top: 20px;
+}
+
+h3{
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 60px;
+    color: #3385ff;
+}
+
+.texto{
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.titulo{
+    color: #00ccff;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
