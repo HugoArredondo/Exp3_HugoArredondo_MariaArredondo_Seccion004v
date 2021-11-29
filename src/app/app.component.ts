@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { AlertController, NavController } from '@ionic/angular';
 
 
 interface Componente{
@@ -14,7 +15,10 @@ interface Componente{
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+              // public alertController: AlertController,
+              // public navCtrl: NavController
+              ) {}
 
   componentes : Componente[] =[
     {
@@ -26,11 +30,6 @@ export class AppComponent {
       icon: 'school-outline',
       name: 'Establecimientos', 
       redirecTo: '/tipo'
-    },
-    {
-      icon: 'person-circle-outline', 
-      name: 'Inicio Sesión', 
-      redirecTo: '/login'
     },
     {
       icon: 'mail-unread-outline', 
@@ -49,6 +48,25 @@ export class AppComponent {
     },
   ]
 
+  // async salir(){
+  //   const alert = await this.alertController.create({
+  //     header: 'Salir',
+  //     message: '¿Quiere salir de EducTips?',
+  //     buttons: [
+  //       {
+  //         text: 'No',
+  //         handler: ()=>{
+
+  //         }
+  //       }, {
+  //         text: 'Si',
+  //         handler: ()=> {
+  //           localStorage.removeItem('ingresado');
+  //           this.navCtrl.navigateRoot('login');
+  //         }
+  //       }
+  //     ]
+  //   })
+  // }
+
 }
-
-
